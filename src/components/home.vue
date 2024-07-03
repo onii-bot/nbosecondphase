@@ -22,9 +22,10 @@
     </div>
     <img class="skull" src="@/assets/skull.png" alt="" />
 
-    <img class="hero_1" src="@/assets/heroimg.png" alt="" />
+    <!-- <img class="hero_1" src="@/assets/heroimg.png" alt="" />
     <img class="hero_2" src="@/assets/heroimg.png" alt="" />
-    <img class="hero_3" src="@/assets/heroimg.png" alt="" />
+    <img class="hero_3" src="@/assets/heroimg.png" alt="" /> -->
+    
     <img
       class="launchpad_banner"
       src="@/assets/Launchpad_Banner_3.png"
