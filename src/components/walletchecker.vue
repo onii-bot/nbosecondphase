@@ -2,7 +2,11 @@
   <div class="wallet-checker-main">
     <p class="wallet-p">Check your wallet</p>
     <div class="wallet-checker">
-      <input type="text" v-model="inputWallet" placeholder="Enter wallet address" />
+      <input
+        type="text"
+        v-model="inputWallet"
+        placeholder="Enter wallet address"
+      />
       <button @click="checkWallet">Submit</button>
     </div>
     <p v-if="showResult">{{ result }}</p>
@@ -10,28 +14,28 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { storedWallets } from '/src/walletData.js'
-const inputWallet = ref('')
-const showResult = ref(false)
-const result = ref('')
+import { ref } from "vue";
+import { storedWallets } from "/src/walletData.js";
+const inputWallet = ref("");
+const showResult = ref(false);
+const result = ref("");
 
 const checkWallet = () => {
   const found = storedWallets.some((wallet) => {
-    return wallet === inputWallet.value
-  })
+    return wallet === inputWallet.value;
+  });
 
   if (found) {
-    result.value = 'Wallet available!'
+    result.value = "Wallet available!";
   } else {
-    result.value = 'Wallet not available'
+    result.value = "Wallet not available";
   }
-  showResult.value = true
-}
+  showResult.value = true;
+};
 </script>
 
 <style>
-input[type='text'] {
+input[type="text"] {
   width: 80%;
   padding: 2vh;
   margin-right: 3vh;

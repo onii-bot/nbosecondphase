@@ -6,12 +6,13 @@
     </div>
     <div class="discription">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat.
       </p>
     </div>
 
@@ -21,15 +22,19 @@
     </div>
     <img class="skull" src="@/assets/skull.png" alt="" />
 
-    <!-- <img class="hero_1" src="@/assets/heroimg.png" alt="" />
+    <img class="hero_1" src="@/assets/heroimg.png" alt="" />
     <img class="hero_2" src="@/assets/heroimg.png" alt="" />
-    <img class="hero_3" src="@/assets/heroimg.png" alt="" /> -->
-    <img class="launchpad_banner" src="@/assets/Launchpad_Banner_3.png" alt="" />
+    <img class="hero_3" src="@/assets/heroimg.png" alt="" />
+    <img
+      class="launchpad_banner"
+      src="@/assets/Launchpad_Banner_3.png"
+      alt=""
+    />
   </div>
 </template>
 
-<script setup lang="ts">
-import walletchecker from '../components/walletchecker.vue'
+<script setup>
+import walletchecker from "../components/walletchecker.vue";
 </script>
 <style>
 body {
@@ -54,7 +59,13 @@ body {
   margin-top: 7vh;
 }
 .heading-1 {
-  background: linear-gradient(to right, #e00000 0%, #e40b0b 38%, #ffff 76%, #1c0001 100%);
+  background: linear-gradient(
+    to right,
+    #e00000 0%,
+    #e40b0b 38%,
+    #ffff 76%,
+    #1c0001 100%
+  );
   color: #e00000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -170,6 +181,18 @@ body {
     top: 10vh;
     left: 2vh;
   }
+  .hero_1,
+  .hero_2,
+  .hero_3 {
+    display: none;
+  }
+  /* .container {
+    background-image: url("@/assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  } */
 }
 @media (max-width: 768px) {
   .skull {
