@@ -21,20 +21,25 @@
       <RouterView />
     </div>
     <img class="skull" src="@/assets/skull.png" alt="" />
-
-    <!-- <img class="hero_1" src="@/assets/heroimg.png" alt="" />
-    <img class="hero_2" src="@/assets/heroimg.png" alt="" />
-    <img class="hero_3" src="@/assets/heroimg.png" alt="" /> -->
-    
     <img
       class="launchpad_banner"
       src="@/assets/Launchpad_Banner_3.png"
       alt=""
     />
+    <div class="hero">
+      <img class="hero_1" src="@/assets/heroimg.png" alt="" />
+      <img class="hero_2" src="@/assets/heroimg.png" alt="" />
+      <img class="hero_3" src="@/assets/heroimg.png" alt="" />
+      <!-- <img
+        class="launchpad_banner"
+        src="@/assets/Launchpad_Banner_3.png"
+        alt=""
+      /> -->
+    </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import walletchecker from "../components/walletchecker.vue";
 </script>
 <style>
@@ -50,7 +55,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  /* position: absolute; */
   padding: 0 2vh;
 }
 .heading {
@@ -63,9 +68,9 @@ body {
   background: linear-gradient(
     to right,
     #e00000 0%,
-    #e40b0b 38%,
-    #ffff 76%,
-    #1c0001 100%
+    #e40b0b 40%,
+    #fcfc4c 50%,
+    #bc0707 100%
   );
   color: #e00000;
   -webkit-background-clip: text;
@@ -121,45 +126,121 @@ body {
     transform: rotate(-360deg);
   }
 }
-
+.skull {
+  position: absolute;
+  top: 10vh;
+  left: 2vh;
+}
+.hero {
+  position: absolute;
+  min-width: 70%;
+  margin-top: 10vh;
+}
 .hero_1 {
   opacity: 0.3;
-  position: absolute;
-  width: 100vh;
-  top: 5vh;
-  left: 50vh;
+  position: fixed;
+  width: 50%;
+  top: 6vw;
+  left: 25vw;
   z-index: -10;
   animation: rotateAnticlockwise 80s linear infinite;
 }
 .hero_2 {
   opacity: 0.2;
-  position: absolute;
-  width: 120vh;
-  top: -5vh;
-  left: 40vh;
+  position: fixed;
+  width: 60%;
+  top: 1vw;
+  left: 20vw;
   z-index: -9;
   animation: rotateClockwise 100s linear infinite;
 }
 .hero_3 {
   opacity: 0.1;
-  position: absolute;
-  width: 140vh;
-  top: -14vh;
-  left: 30vh;
+  position: fixed;
+  width: 70%;
+
+  top: -4vw;
+  left: 15vw;
   z-index: -9;
   animation: rotateAnticlockwise 120s linear infinite;
 }
 .launchpad_banner {
   width: 100%;
-  position: absolute;
-  top: 10vh;
+  position: fixed;
+  top: 8vw;
   z-index: -1;
   opacity: 0.4;
 }
-.skull {
-  position: absolute;
-  top: 10vh;
-  left: 2vh;
+@media (min-width: 2001px) and (max-width: 2560px) {
+  .discription {
+    width: 50%;
+    font-size: 32px;
+  }
+  .heading-1 {
+    font-size: xx-large;
+  }
+  .nav-item {
+    font-size: 32px;
+  }
+  .wallet-checker-main {
+    font-size: 32px;
+  }
+
+  .skull {
+    position: absolute;
+    top: 10vh;
+    left: 2vh;
+  }
+  .hero_1 {
+    opacity: 0.3;
+    position: fixed;
+    width: 50%;
+    top: 5vw;
+    left: 25vw;
+    z-index: -10;
+    animation: rotateAnticlockwise 80s linear infinite;
+  }
+  .hero_2 {
+    opacity: 0.2;
+    position: fixed;
+    width: 60%;
+    top: 0vw;
+    left: 20vw;
+    z-index: -9;
+    animation: rotateClockwise 100s linear infinite;
+  }
+  .hero_3 {
+    opacity: 0.1;
+    position: fixed;
+    width: 70%;
+
+    top: -5vw;
+    left: 15vw;
+    z-index: -9;
+    animation: rotateAnticlockwise 120s linear infinite;
+  }
+}
+@media (max-width: 2000px) {
+  .discription {
+    width: 50%;
+  }
+  .heading-1 {
+    font-size: xx-large;
+  }
+
+  .skull {
+    position: absolute;
+    top: 10vh;
+    left: 2vh;
+  }
+}
+@media (max-width: 1600px) {
+  .hero_1 {
+  }
+  .hero_2 {
+  }
+  .hero_3 {
+  }
 }
 @media (max-width: 1200px) {
   .discription {
@@ -171,8 +252,49 @@ body {
     top: 10vh;
     left: 2vh;
   }
-}
+  .container {
+    align-items: center;
+  }
+  .hero_1 {
+    /* opacity: 0.3; */
+    position: fixed;
+    width: 48%;
+    top: 7vw;
+    left: 26vw;
+    /* z-index: -10; */
+    animation: rotateAnticlockwise 80s linear infinite;
+  }
+  .hero_2 {
+    /* opacity: 0.2; */
+    position: fixed;
+    width: 57%;
+    top: 3vw;
+    left: 21vw;
+    /* z-index: -9; */
+    animation: rotateClockwise 100s linear infinite;
+  }
+  .hero_3 {
+    /* opacity: 0.1; */
+    position: fixed;
+    width: 65%;
 
+    top: -1vw;
+    left: 17vw;
+    /* z-index: -9; */
+    animation: rotateAnticlockwise 120s linear infinite;
+  }
+}
+@media (max-width: 1024px) {
+  .discription {
+    width: 60%;
+  }
+
+  .skull {
+    position: absolute;
+    top: 10vh;
+    left: 2vh;
+  }
+}
 @media (max-width: 992px) {
   .discription {
     width: 70%;
@@ -182,18 +304,34 @@ body {
     top: 10vh;
     left: 2vh;
   }
-  .hero_1,
-  .hero_2,
-  .hero_3 {
-    display: none;
+  .hero_1 {
+    /* opacity: 0.3; */
+    position: fixed;
+    width: 50%;
+    top: 6vw;
+    left: 25vw;
+    /* z-index: -10; */
+    animation: rotateAnticlockwise 80s linear infinite;
   }
-  /* .container {
-    background-image: url("@/assets/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-  } */
+  .hero_2 {
+    /* opacity: 0.2; */
+    position: fixed;
+    width: 68%;
+    top: -1vw;
+    left: 17vw;
+    /* z-index: -9; */
+    animation: rotateClockwise 100s linear infinite;
+  }
+  .hero_3 {
+    /* opacity: 0.1; */
+    position: fixed;
+    width: 83%;
+
+    top: -8vw;
+    left: 11vw;
+    /* z-index: -9; */
+    animation: rotateAnticlockwise 120s linear infinite;
+  }
 }
 @media (max-width: 768px) {
   .skull {
@@ -205,8 +343,19 @@ body {
     width: 80%;
   }
   .wallet-checker-main input {
-    width: 60%;
-    margin-left: 8vh;
+    width: 70%;
+    margin-left: 5vh;
+  }
+  .hero_1,
+  .hero_2,
+  .hero_3 {
+    display: none;
+  }
+  .launchpad_banner {
+    position: absolute;
+    width: 100%;
+    top: -5vh;
+    left: 0vh;
   }
 }
 
@@ -235,19 +384,23 @@ body {
     box-sizing: border-box;
   }
   .wallet-checker-main input {
-    width: 70%;
-    margin-left: 8vh;
+    width: 62%;
+    margin-left: 9vh;
   }
+
   .launchpad_banner {
     width: 100%;
     position: absolute;
-    top: 10vh;
-    left: 2vh;
+    top: -4vh;
+    left: 3vh;
     z-index: -1;
     opacity: 0.4;
   }
   .wallet-checker-main button {
     margin-left: 4vh;
+  }
+  .wallet-p {
+    margin-left: 7vw;
   }
 }
 @media (min-width: 320px) and (max-width: 424px) {
@@ -260,15 +413,19 @@ body {
   }
 
   .wallet-p {
-    margin-left: 3vh;
+    margin-left: 6vh;
+  }
+  .wallet-checker-main input {
+    width: 52%;
+    /* margin-left: 9vh; */
   }
   .wallet-checker-main button {
-    margin-left: 4vh;
+    margin-left: 5vh;
   }
   .launchpad_banner {
     width: 100%;
     position: absolute;
-    top: 10vh;
+    top: 4vh;
     left: 3vh;
     z-index: -1;
     opacity: 0.4;
@@ -278,6 +435,13 @@ body {
     height: 50%;
     margin-left: 5.5vh;
     text-align: center;
+  }
+}
+@media (max-width: 320px) {
+  .launchpad_banner {
+    position: absolute;
+    top: 6vh;
+    left: 3vh;
   }
 }
 </style>

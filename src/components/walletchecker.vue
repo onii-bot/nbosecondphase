@@ -44,9 +44,14 @@ input[type="text"] {
   margin-bottom: 2vh;
   text-align: center;
 }
+.wallet-checker-main .wallet-p{
+  color: #e6ff07;
+  font-size: 20px;
+  font-weight: 800;
+}
 
 button {
-  background-color: #700000;
+  background-color: #900000;
   color: white;
   border: none;
   border-radius: 20px;
