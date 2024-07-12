@@ -7,33 +7,30 @@
         v-model="inputWallet"
         placeholder="Enter wallet address"
       />
-      <button @click="checkWallet">Submit</button>
+      <button @click="checkWallet" class="button-p">Submit</button>
     </div>
-    <p v-if="showResult">{{ result }}</p>
+    <div v-if="showResult" class="result">{{ result }}</div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { storedWallets } from "/src/walletData.js";
+import { storedWallets } from "./../walletData";
+
 const inputWallet = ref("");
 const showResult = ref(false);
 const result = ref("");
 
 const checkWallet = () => {
-  const found = storedWallets.some((wallet) => {
-    return wallet === inputWallet.value;
-  });
+  const found = storedWallets.includes(inputWallet.value);
+  console.log("Checking wallet:", inputWallet.value);
+  console.log("Stored wallets:", storedWallets);
 
-  if (found) {
-    result.value = "Wallet available!";
-  } else {
-    result.value = "Wallet not available";
-  }
+  result.value = found ? "Wallet available!" : "Wallet not available!!!";
   showResult.value = true;
+  inputWallet.value = "";
 };
 </script>
-
 <style>
 input[type="text"] {
   width: 80%;
@@ -44,7 +41,7 @@ input[type="text"] {
   margin-bottom: 2vh;
   text-align: center;
 }
-.wallet-checker-main .wallet-p{
+.wallet-checker-main .wallet-p {
   color: #e6ff07;
   font-size: 20px;
   font-weight: 800;
@@ -59,8 +56,17 @@ button {
   width: 13vh;
   height: 7vh;
 }
-
+.button-p {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
 button:hover {
   background-color: #600000;
+}
+.result {
+  font-size: large;
+  color: white;
+  padding-top: 2vh;
 }
 </style>

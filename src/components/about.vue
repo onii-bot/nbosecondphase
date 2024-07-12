@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <img src="@/assets/about-banner.png" alt="" class="about-banner" />
+    <img src="@/assets/about-banner.webp" alt="" class="about-banner" />
     <p class="about-discription">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -16,7 +16,7 @@
 
     <div class="cards">
       <div class="founder">
-        <img src="@/assets/founder.png" alt="" class="founder-img" />
+        <img src="@/assets/founder.webp" alt="" class="founder-img" />
         <p class="teams">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -25,7 +25,7 @@
         </p>
       </div>
       <div class="co-founder">
-        <img src="@/assets/collab-manager.png" alt="" class="cofounder-img" />
+        <img src="@/assets/collab-manager.webp" alt="" class="cofounder-img" />
         <p class="teams">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -34,7 +34,7 @@
         </p>
       </div>
       <div class="developer">
-        <img src="@/assets/logo.png" alt="" class="developer-img" />
+        <img src="@/assets/logo.webp" alt="" class="developer-img" />
         <p class="teams">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -84,6 +84,7 @@ window.addEventListener(
 }
 .about-banner {
   width: 100%;
+
   position: fixed;
   top: 5%;
   z-index: -12;
@@ -91,11 +92,11 @@ window.addEventListener(
 }
 .about-discription {
   display: flex;
-  padding-top: 20vh;
-  width: 55%;
+  padding-top: 5vh;
+  width: 80%;
 
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   color: #f5f5f5;
   opacity: 1;
   transition: opacity 1.2s ease-out;
@@ -107,7 +108,7 @@ window.addEventListener(
 
 .cards {
   display: grid;
-  margin: 55vh 30vh;
+  margin: 10vh 10vh;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 50px;
   row-gap: 50px;
@@ -120,11 +121,17 @@ window.addEventListener(
 .co-founder,
 .developer {
   margin: 0 2vw;
+
+  padding: 2vh;
+  border-radius: 10px;
+  background-color: rgba(71, 0, 0, 1);
+
+  /* box-shadow: #a33e3e; */
 }
 .founder-img,
 .cofounder-img,
 .developer-img {
-  width: 300px;
+  width: 70%;
 }
 .founder,
 .co-founder,
@@ -140,26 +147,43 @@ window.addEventListener(
   height: 300px;
   background-color: rgba(71, 0, 0, 0.6);
 }
-@media (min-width: 2000px) {
+@media (min-width: 1905px) {
   .founder,
   .co-founder,
   .developer {
     margin: 2vh 3vw;
   }
+  .about-banner {
+    margin: 8vh;
+  }
+  .cards img {
+    width: 120%;
+  }
+  .cards {
+    column-gap: 100px;
+  }
+  .about-discription {
+    font-size: 30px;
+  }
+  .teams {
+    font-size: large;
+    width: 120%;
+  }
 }
 @media (max-width: 1200px) {
   .about-discription {
-    padding: 20vh 10vw;
-    font-size: 18px;
+    padding: 5vh 5vw;
+    font-size: 16px;
     margin: 0vh 4vw;
   }
   .cards {
     /* margin-right: 1vw; */
     align-items: center;
     /* width: 95%; */
+    margin: 10vh 30vh;
   }
   .cards img {
-    width: 85%;
+    width: 75%;
   }
   .teams {
     margin: 0 2vw;
@@ -178,8 +202,8 @@ window.addEventListener(
     display: flex;
     /* flex-direction: column; */
     width: 90%;
-    padding-top: 0vh;
-    margin-top: 40vh;
+    /* padding-top: 0vh;
+    margin-top: 40vh; */
   }
   .cards img {
     width: 100%;
@@ -193,10 +217,10 @@ window.addEventListener(
     width: 80%;
   }
   .cards {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     grid-template-columns: 1fr;
-    margin: 43vh 5vh;
+    /* margin: vh 5vh; */
   }
 
   .card {
@@ -208,9 +232,13 @@ window.addEventListener(
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
   .cards img {
     width: 70%;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (max-width: 340px) {

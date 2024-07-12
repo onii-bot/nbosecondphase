@@ -6,9 +6,10 @@
       <div></div>
       <div></div>
     </div>
-    <span class="logo" v-if="isSmallScreen">
-      <img src="@/assets/logo.png" alt="" />
-    </span>
+
+    <RouterLink to="/" class="logo" v-if="isSmallScreen">
+      <img src="@/assets/logo.webp" alt="" />
+    </RouterLink>
   </div>
 
   <!-- Responsive menu -->
@@ -23,10 +24,16 @@
 
   <!-- Regular navbar for larger screens -->
   <nav class="navbar" v-if="!isSmallScreen">
-    <div class="logo"><img src="@/assets/logo.png" alt="" /></div>
+    <RouterLink to="/" class="logo"
+      ><img src="@/assets/logo.webp" alt=""
+    /></RouterLink>
     <ul class="nav">
-      <RouterLink to="/" class="nav-item">Home</RouterLink>
-      <RouterLink to="/about" class="nav-item">About us</RouterLink>
+      <RouterLink to="/" class="nav-item" active-class="active"
+        >Home</RouterLink
+      >
+      <RouterLink to="/about" class="nav-item" active-class="active"
+        >About us</RouterLink
+      >
     </ul>
   </nav>
 </template>
@@ -48,13 +55,11 @@ export default {
     },
   },
   mounted() {
-    // Check screen size initially
     this.checkScreenSize();
-    // Add event listener to check screen size on resize
+
     window.addEventListener("resize", this.checkScreenSize);
   },
   beforeUnmount() {
-    // Clean up event listener on component destroy
     window.removeEventListener("resize", this.checkScreenSize);
   },
 };
@@ -87,10 +92,15 @@ export default {
   text-decoration: none;
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.nav-item.active {
   color: #b20000;
 }
-
+@media (min-width: 2000px) {
+  .navbar {
+    font-size: larger;
+  }
+}
 @media (max-width: 992px) {
   .navbar img {
     width: 10vh;
@@ -136,7 +146,7 @@ export default {
 .hamburger-menu div {
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: red;
   margin: 5px 0;
 }
 

@@ -20,16 +20,16 @@
       <walletchecker />
       <RouterView />
     </div>
-    <img class="skull" src="@/assets/skull.png" alt="" />
+    <img class="skull" src="@/assets/skull.webp" alt="" />
     <img
       class="launchpad_banner"
-      src="@/assets/Launchpad_Banner_3.png"
+      src="@/assets/Launchpad_Banner_3.webp"
       alt=""
     />
     <div class="hero">
-      <img class="hero_1" src="@/assets/heroimg.png" alt="" />
-      <img class="hero_2" src="@/assets/heroimg.png" alt="" />
-      <img class="hero_3" src="@/assets/heroimg.png" alt="" />
+      <img class="hero_1" src="@/assets/heroimg.webp" alt="" />
+      <img class="hero_2" src="@/assets/heroimg.webp" alt="" />
+      <img class="hero_3" src="@/assets/heroimg.webp" alt="" />
       <!-- <img
         class="launchpad_banner"
         src="@/assets/Launchpad_Banner_3.png"
@@ -157,10 +157,10 @@ body {
 .hero_3 {
   opacity: 0.1;
   position: fixed;
-  width: 70%;
+  width: 69%;
 
   top: -4vw;
-  left: 15vw;
+  left: 16vw;
   z-index: -9;
   animation: rotateAnticlockwise 120s linear infinite;
 }
@@ -307,8 +307,8 @@ body {
   .hero_1 {
     /* opacity: 0.3; */
     position: fixed;
-    width: 50%;
-    top: 6vw;
+    width: 52%;
+    top: 5vw;
     left: 25vw;
     /* z-index: -10; */
     animation: rotateAnticlockwise 80s linear infinite;
@@ -316,19 +316,19 @@ body {
   .hero_2 {
     /* opacity: 0.2; */
     position: fixed;
-    width: 68%;
+    width: 65%;
     top: -1vw;
-    left: 17vw;
+    left: 18vw;
     /* z-index: -9; */
     animation: rotateClockwise 100s linear infinite;
   }
   .hero_3 {
     /* opacity: 0.1; */
     position: fixed;
-    width: 83%;
+    width: 76%;
 
-    top: -8vw;
-    left: 11vw;
+    top: -6vw;
+    left: 13vw;
     /* z-index: -9; */
     animation: rotateAnticlockwise 120s linear infinite;
   }
@@ -346,17 +346,46 @@ body {
     width: 70%;
     margin-left: 5vh;
   }
-  .hero_1,
+  /* .hero_1,
   .hero_2,
   .hero_3 {
     display: none;
+  } */
+  .hero_1 {
+    /* opacity: 0.3; */
+    position: fixed;
+    width: 52%;
+    top: 5vw;
+    left: 25vw;
+    /* z-index: -10; */
+    animation: rotateAnticlockwise 80s linear infinite;
   }
-  .launchpad_banner {
+  .hero_2 {
+    /* opacity: 0.2; */
+    position: fixed;
+    width: 64%;
+    top: 0vw;
+    left: 19vw;
+    /* z-index: -9; */
+    animation: rotateClockwise 100s linear infinite;
+  }
+  .hero_3 {
+    /* opacity: 0.1; */
+    position: fixed;
+    width: 81%;
+
+    top: -7vw;
+    left: 11vw;
+    /* z-index: -9; */
+    animation: rotateAnticlockwise 120s linear infinite;
+  }
+
+  /* .launchpad_banner {
     position: absolute;
     width: 100%;
     top: -5vh;
     left: 0vh;
-  }
+  } */
 }
 
 @media (max-width: 576px) {
@@ -380,6 +409,11 @@ body {
     top: 8vh;
     left: 2vh;
   }
+  .hero_1,
+  .hero_2,
+  .hero_3 {
+    display: none;
+  }
   .wallet-checker {
     box-sizing: border-box;
   }
@@ -387,7 +421,10 @@ body {
     width: 62%;
     margin-left: 9vh;
   }
-
+  .result {
+    padding-left: 5vw;
+    font-size: medium;
+  }
   .launchpad_banner {
     width: 100%;
     position: absolute;
@@ -421,6 +458,9 @@ body {
   }
   .wallet-checker-main button {
     margin-left: 5vh;
+  }
+  .result {
+    padding-left: 7vw;
   }
   .launchpad_banner {
     width: 100%;
