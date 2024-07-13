@@ -2,9 +2,9 @@
   <div class="container">
     <div class="heading">
       <div class="heading-1">NEW BITCOIN ORDER</div>
-      <div class="heading-2">ORDINALS COLLIECTION</div>
+      <div class="heading-2">ORDINALS COLLECTION</div>
     </div>
-    <div class="discription">
+    <div class="description">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -16,54 +16,62 @@
       </p>
     </div>
 
-    <div class="'wallet-checker'">
+    <div class="wallet-checker">
       <walletchecker />
-      <RouterView />
+      <router-view />
     </div>
-    <img class="skull" src="@/assets/skull.webp" alt="" />
+    <!-- Rotating hero images -->
+    <div class="hero">
+      
+      <img class="hero_1" src="@/assets/heroimg.webp" alt="" />
+      <img class="hero_2" src="@/assets/heroimg.webp" alt="" />
+      <img class="hero_3" src="@/assets/heroimg.webp" alt="" />
+    </div>
+
     <img
       class="launchpad_banner"
       src="@/assets/Launchpad_Banner_3.webp"
       alt=""
     />
-    <div class="hero">
-      <img class="hero_1" src="@/assets/heroimg.webp" alt="" />
-      <img class="hero_2" src="@/assets/heroimg.webp" alt="" />
-      <img class="hero_3" src="@/assets/heroimg.webp" alt="" />
-      <!-- <img
-        class="launchpad_banner"
-        src="@/assets/Launchpad_Banner_3.png"
-        alt=""
-      /> -->
-    </div>
+    <img
+      class="mobile_banner"
+      src="@/assets/banner_mobile.jpg"
+      alt=""
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import walletchecker from "../components/walletchecker.vue";
 </script>
-<style>
+
+<style scoped>
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
+  font-family: Arial, sans-serif;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* position: absolute; */
+  justify-content: center;
   padding: 0 2vh;
-}
-.heading {
+  font-size: 16px;
   text-align: center;
-  font-size: xx-large;
-  color: #ffff;
-  margin-top: 7vh;
+  position: relative; /* Ensure container for z-index stacking */
 }
+
+.heading {
+  
+  color: #fff;
+  margin-top: 7vh;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .heading-1 {
   background: linear-gradient(
     to right,
@@ -72,41 +80,91 @@ body {
     #fcfc4c 50%,
     #bc0707 100%
   );
-  color: #e00000;
+  font-size: 2em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
-  font-weight: 900;
-}
-.heading-2 {
-  font-size: x-large;
-}
-.discription {
-  color: #f2f2f2;
-  text-align: center;
-  width: 50%;
-  margin: 2vh 0;
-  flex-shrink: 1;
+  font-weight: 700;
 }
 
-.wallet-checker-main {
-  text-align: center;
+.heading-2 {
+  font-size: 1.5em;
+}
+
+.description {
+  color: #f2f2f2;
+  max-width: 900px;
+  margin: 2vh;
+  padding: 0;
+  line-height: normal;
+  
+}
+
+.wallet-checker {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 20vh;
-  width: 60vh;
-  /* display: flex; */
-  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+ 
 }
 
 .wallet-checker > * {
   box-sizing: border-box;
   flex-direction: column;
 }
+
 .wallet-p {
-  font-size: large;
-  color: #ffff;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.hero {
+  position: absolute;
+  min-width: 70%;
+  margin-top: 10vh;
+}
+
+.hero_1 {
+  opacity: 0.3;
+  position: fixed;
+  width: 50%;
+  top: 6vw;
+  left: 25vw;
+  z-index: -10;
+  animation: rotateAnticlockwise 120s linear infinite;
+}
+.hero_2 {
+  opacity: 0.2;
+  position: fixed;
+  width: 60%;
+  top: 1vw;
+  left: 20vw;
+  z-index: -9;
+  animation: rotateClockwise 160s linear infinite;
+}
+.hero_3 {
+  opacity: 0.1;
+  position: fixed;
+  width: 69%;
+  top: -4vw;
+  left: 16vw;
+  z-index: -9;
+  animation: rotateAnticlockwise 200s linear infinite;
+}
+.launchpad_banner {
+  width: 100%;
+  position: fixed;
+  top: 8vw;
+  z-index: -1;
+  opacity: 0.4;
+}
+.mobile_banner{
+  display: none;
+  opacity: 0.3;
+  position: fixed;
+  z-index: -10;
 }
 
 @keyframes rotateClockwise {
@@ -126,362 +184,158 @@ body {
     transform: rotate(-360deg);
   }
 }
-.skull {
-  position: absolute;
-  top: 10vh;
-  left: 2vh;
-}
-.hero {
-  position: absolute;
-  min-width: 70%;
-  margin-top: 10vh;
-}
-.hero_1 {
-  opacity: 0.3;
-  position: fixed;
-  width: 50%;
-  top: 6vw;
-  left: 25vw;
-  z-index: -10;
-  animation: rotateAnticlockwise 80s linear infinite;
-}
-.hero_2 {
-  opacity: 0.2;
-  position: fixed;
-  width: 60%;
-  top: 1vw;
-  left: 20vw;
-  z-index: -9;
-  animation: rotateClockwise 100s linear infinite;
-}
-.hero_3 {
-  opacity: 0.1;
-  position: fixed;
-  width: 69%;
 
-  top: -4vw;
-  left: 16vw;
-  z-index: -9;
-  animation: rotateAnticlockwise 120s linear infinite;
-}
-.launchpad_banner {
-  width: 100%;
-  position: fixed;
-  top: 8vw;
-  z-index: -1;
-  opacity: 0.4;
-}
-@media (min-width: 2001px) and (max-width: 2560px) {
-  .discription {
-    width: 50%;
-    font-size: 32px;
-  }
-  .heading-1 {
-    font-size: xx-large;
-  }
-  .nav-item {
-    font-size: 32px;
-  }
-  .wallet-checker-main {
-    font-size: 32px;
-  }
-
-  .skull {
-    position: absolute;
-    top: 10vh;
-    left: 2vh;
-  }
-  .hero_1 {
-    opacity: 0.3;
-    position: fixed;
-    width: 50%;
-    top: 5vw;
-    left: 25vw;
-    z-index: -10;
-    animation: rotateAnticlockwise 80s linear infinite;
-  }
-  .hero_2 {
-    opacity: 0.2;
-    position: fixed;
-    width: 60%;
-    top: 0vw;
-    left: 20vw;
-    z-index: -9;
-    animation: rotateClockwise 100s linear infinite;
-  }
-  .hero_3 {
-    opacity: 0.1;
-    position: fixed;
-    width: 70%;
-
-    top: -5vw;
-    left: 15vw;
-    z-index: -9;
-    animation: rotateAnticlockwise 120s linear infinite;
-  }
-}
-@media (max-width: 2000px) {
-  .discription {
-    width: 50%;
-  }
-  .heading-1 {
-    font-size: xx-large;
-  }
-
-  .skull {
-    position: absolute;
-    top: 10vh;
-    left: 2vh;
-  }
-}
-@media (max-width: 1600px) {
-  .hero_1 {
-  }
-  .hero_2 {
-  }
-  .hero_3 {
-  }
-}
 @media (max-width: 1200px) {
-  .discription {
-    width: 60%;
-  }
-
-  .skull {
-    position: absolute;
-    top: 10vh;
-    left: 2vh;
-  }
-  .container {
-    align-items: center;
-  }
+  
   .hero_1 {
-    /* opacity: 0.3; */
-    position: fixed;
     width: 48%;
     top: 7vw;
     left: 26vw;
-    /* z-index: -10; */
-    animation: rotateAnticlockwise 80s linear infinite;
   }
   .hero_2 {
-    /* opacity: 0.2; */
-    position: fixed;
     width: 57%;
     top: 3vw;
     left: 21vw;
-    /* z-index: -9; */
-    animation: rotateClockwise 100s linear infinite;
   }
   .hero_3 {
-    /* opacity: 0.1; */
-    position: fixed;
     width: 65%;
-
     top: -1vw;
     left: 17vw;
-    /* z-index: -9; */
-    animation: rotateAnticlockwise 120s linear infinite;
   }
 }
 @media (max-width: 1024px) {
-  .discription {
-    width: 60%;
-  }
-
-  .skull {
-    position: absolute;
-    top: 10vh;
-    left: 2vh;
-  }
-}
-@media (max-width: 992px) {
-  .discription {
-    width: 70%;
-  }
-  .skull {
-    position: absolute;
-    top: 10vh;
-    left: 2vh;
-  }
   .hero_1 {
-    /* opacity: 0.3; */
-    position: fixed;
     width: 52%;
     top: 5vw;
     left: 25vw;
-    /* z-index: -10; */
-    animation: rotateAnticlockwise 80s linear infinite;
   }
   .hero_2 {
-    /* opacity: 0.2; */
-    position: fixed;
     width: 65%;
     top: -1vw;
     left: 18vw;
-    /* z-index: -9; */
-    animation: rotateClockwise 100s linear infinite;
   }
   .hero_3 {
-    /* opacity: 0.1; */
-    position: fixed;
     width: 76%;
-
     top: -6vw;
     left: 13vw;
-    /* z-index: -9; */
-    animation: rotateAnticlockwise 120s linear infinite;
+  }
+  .container{
+    font-size: 14px;
+  }
+  .description{
+    max-width: 800px;
   }
 }
 @media (max-width: 768px) {
-  .skull {
-    position: absolute;
-    top: 8vh;
-    left: 1vh;
-  }
-  .discription {
-    width: 80%;
+  
+  .description {
+    padding: 0 5%;
   }
   .wallet-checker-main input {
     width: 70%;
     margin-left: 5vh;
   }
-  /* .hero_1,
-  .hero_2,
-  .hero_3 {
-    display: none;
-  } */
   .hero_1 {
-    /* opacity: 0.3; */
-    position: fixed;
     width: 52%;
     top: 5vw;
     left: 25vw;
-    /* z-index: -10; */
-    animation: rotateAnticlockwise 80s linear infinite;
   }
   .hero_2 {
-    /* opacity: 0.2; */
-    position: fixed;
     width: 64%;
     top: 0vw;
     left: 19vw;
-    /* z-index: -9; */
-    animation: rotateClockwise 100s linear infinite;
   }
   .hero_3 {
-    /* opacity: 0.1; */
-    position: fixed;
     width: 81%;
-
     top: -7vw;
-    left: 11vw;
-    /* z-index: -9; */
-    animation: rotateAnticlockwise 120s linear infinite;
-  }
-
-  /* .launchpad_banner {
-    position: absolute;
-    width: 100%;
-    top: -5vh;
-    left: 0vh;
-  } */
-}
-
-@media (max-width: 576px) {
-  body {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .discription {
-    width: 90%;
-    height: 50%;
-    text-align: justify;
-    margin-left: 6vh;
-    text-align: center;
-  }
-  .heading {
-    margin-left: 6vh;
-  }
-  .skull {
-    width: 8vh;
-    top: 8vh;
-    left: 2vh;
-  }
-  .hero_1,
-  .hero_2,
-  .hero_3 {
-    display: none;
-  }
-  .wallet-checker {
-    box-sizing: border-box;
-  }
-  .wallet-checker-main input {
-    width: 62%;
-    margin-left: 9vh;
-  }
-  .result {
-    padding-left: 5vw;
-    font-size: medium;
+    left: 10vw;
   }
   .launchpad_banner {
-    width: 100%;
-    position: absolute;
-    top: -4vh;
-    left: 3vh;
-    z-index: -1;
-    opacity: 0.4;
+    top: 8vw;
+  }
+}
+@media (max-width: 576px) {
+  
+  .description {
+    padding: 0 2%;
+  }
+  .wallet-checker-main input {
+    width: 60%;
+    margin-left: 4vh;
   }
   .wallet-checker-main button {
     margin-left: 4vh;
   }
-  .wallet-p {
-    margin-left: 7vw;
-  }
-}
-@media (min-width: 320px) and (max-width: 424px) {
-  .heading {
-    margin-left: 6vh;
-  }
-
-  .skull {
+  
+  .hero_1{
     display: none;
   }
-
-  .wallet-p {
-    margin-left: 6vh;
+  .hero_2{
+    top: 7vw;
+    width: 150%;
+    left: -25vw;
+    opacity: 0.15;
   }
-  .wallet-checker-main input {
-    width: 52%;
-    /* margin-left: 9vh; */
+  .hero_3{
+    top: -5vw;
+    width: 180%;
+    left: -38vw;
+    opacity: 0.1;
   }
-  .wallet-checker-main button {
-    margin-left: 5vh;
-  }
-  .result {
-    padding-left: 7vw;
+  .mobile_banner{
+    display: block;
+    width: 100%;
+    top: -11vh;
   }
   .launchpad_banner {
-    width: 100%;
-    position: absolute;
-    top: 4vh;
-    left: 3vh;
-    z-index: -1;
-    opacity: 0.4;
-  }
-  .discription {
-    width: 100%;
-    height: 50%;
-    margin-left: 5.5vh;
-    text-align: center;
+    display: none;
   }
 }
-@media (max-width: 320px) {
-  .launchpad_banner {
-    position: absolute;
-    top: 6vh;
-    left: 3vh;
+@media (max-width:426px) {
+  
+  .hero_2{
+    top: 16vw;
+    left: -25vw;
   }
+  .hero_3{
+    top: 2vw;
+    width: 180%;
+  }
+  .mobile_banner{
+    top: -5vh;
+  }
+  .container{
+    font-size: 14px;
+  }
+}
+@media (max-width:375px) {
+  
+  .hero_2{
+    top: 32vw;
+    left: -25vw;
+  }
+  .hero_3{
+    top: 16vw;
+    
+  }
+  .mobile_banner{
+    top: 4vh;
+  }
+  
+}
+@media (max-width:320px) {
+  .mobile_banner{
+    top: 6vh;
+  }
+  .hero_2{
+    top: 34vw;
+    left: -25vw;
+  }
+  .hero_3{
+    top: 18vw;
+    
+  }
+
+  
 }
 </style>

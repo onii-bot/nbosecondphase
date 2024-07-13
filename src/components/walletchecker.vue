@@ -42,9 +42,23 @@ input[type="text"] {
   text-align: center;
 }
 .wallet-checker-main .wallet-p {
-  color: #e6ff07;
+  color: #eeff07;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
+}
+@media (max-width: 1024px){
+  .wallet-checker-main .wallet-p {
+  
+  font-size: 16px;
+  font-weight: 700;
+   }
+
+}
+@media (max-width: 768px) {
+  .button-p {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 button {

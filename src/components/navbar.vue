@@ -65,7 +65,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -73,10 +73,11 @@ export default {
   padding: 10px;
   font-size: large;
   margin-right: 5vh;
+  z-index: -1;
 }
 
 .navbar img {
-  width: 12vh;
+  width: 6vw;
 }
 
 .nav {
@@ -101,18 +102,14 @@ export default {
     font-size: larger;
   }
 }
-@media (max-width: 992px) {
-  .navbar img {
-    width: 10vh;
-  }
-}
+
 
 @media (max-width: 768px) {
   .navbar {
     justify-content: space-between;
   }
   .navbar img {
-    width: 10vh;
+    width: 1vh;
   }
   .wallet-checker {
     display: flex;
@@ -128,12 +125,6 @@ export default {
   }
 }
 
-@media (max-width: 576px) {
-  .navbar img {
-    width: 8vh;
-  }
-}
-
 .hamburger-menu {
   cursor: pointer;
   display: none;
@@ -142,7 +133,6 @@ export default {
   right: 20px;
   z-index: 1000;
 }
-
 .hamburger-menu div {
   width: 25px;
   height: 3px;
