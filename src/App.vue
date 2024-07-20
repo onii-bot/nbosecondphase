@@ -1,20 +1,39 @@
-<script setup>
-import navbar from "./components/navbar.vue";
-</script>
-
 <template>
-  <navbar />
-  <router-view />
+  <div id="app">
+    <Navbar />
+    <router-view />
+    <Footer />
+  </div>
 </template>
 
+<script>
+import Footer from "@/components/footer.vue";
+import Navbar from "./components/navbar.vue";
+export default {
+  name: "App",
+  components: {
+    Footer,
+    Navbar,
+  },
+};
+</script>
+
 <style>
-
-
+html,
 body {
-  /* background: linear-gradient(to left, #000000 0%, #1c0000 28%, #2c0101 82%, #410101 100%); */
-
+  height: 100%;
+  margin: 0;
+  background: transparent;
   background-color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 14px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
 }
 </style>
