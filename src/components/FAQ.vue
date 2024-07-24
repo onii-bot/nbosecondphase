@@ -33,7 +33,7 @@ export default {
         {
           question: "Lorem ipsum dolor sit amet consectetur?",
           answer:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, accusamus?",
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, accusamus?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, accusamus?",
           isActive: false,
         },
         {
@@ -66,6 +66,7 @@ export default {
 </script>
 
 <style scoped>
+
 .FAQ-container {
   width: min(70rem, 80%);
   padding: 0 10%;
@@ -73,15 +74,19 @@ export default {
   box-sizing: content-box;
   display: flex;
   flex-direction: column;
-  color: white;
+  letter-spacing: 0.08em;
+  
+  
+  
 }
 
-.header {
-  color: red;
+h1 {
+  font-family: "Bangers", system-ui;
+  color:#E4303C;
   text-align: start;
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 400;
-  margin: 0rem 0;
+  margin: 1rem 1rem;
 }
 
 .faq-item {
@@ -93,7 +98,7 @@ export default {
   align-items: center;
   cursor: pointer;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding-left: 1rem;
 }
 
@@ -106,11 +111,15 @@ export default {
 }
 
 .answer {
-  padding: 1rem 0 0rem 3.5rem;
-  font-size: 1.2rem;
+  margin: 1rem 0rem 0rem 3rem;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #141414;
+  color: rgb(255, 252, 252);
 }
 
 .answer.active {
   display: block;
+  
 }
 </style>

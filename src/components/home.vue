@@ -1,32 +1,30 @@
 <template>
   <div class="container">
+    <div class="background"></div>
     <div class="home-logo">
-      <img src="@/assets/twitter_Cover2.webp" alt="" class="logo" />
+      <img src="@/assets/logoo.png" alt="" class="logo" />
     </div>
     <div class="home-images">
       <div class="description">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo quidem
         dolorum, voluptates non voluptatum placeat laboriosam ducimus fuga
         quisquam sint vel, id quasi? Omnis, tenetur voluptatem iusto itaque sunt
+        necessitatibus? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo quidem
+        dolorum, voluptates non voluptatum placeat laboriosam ducimus fuga
+        quisquam sint vel, id quasi? Omnis, tenetur voluptatem iusto itaque sunt
         necessitatibus?
-        <!-- <div class="description-1">This is the real life</div>
-        <div class="description-1">This is the real life</div>
-        <div class="description-1">This is the real life</div>
-        <div class="description-1">This is the real life</div>
-        <div class="description-1">This is the real life</div>
-        <div class="description-1">This is the real</div> -->
       </div>
 
       <div class="images">
-        <img src="@/assets/26.webp" alt="" />
-        <img src="@/assets/52.webp" alt="" />
-        <img src="@/assets/185.webp" alt="" />
-        <img src="@/assets/460.webp" alt="" />
-        <img src="@/assets/1101.webp" alt="" />
-        <img src="@/assets/1110.webp" alt="" />
-        <img src="@/assets/1144.webp" alt="" />
-        <img src="@/assets/1146.webp" alt="" />
-        <img src="@/assets/1374.webp" alt="" />
+        <img src="@/assets/26.webp" alt=""  class="hover"/>
+        <img src="@/assets/52.webp" alt="" class="hover" />
+        <img src="@/assets/185.webp" alt=""  class="hover"/>
+        <img src="@/assets/460.webp" alt=""  class="hover"/>
+        <img src="@/assets/1101.webp" alt=""  class="hover"/>
+        <img src="@/assets/1110.webp" alt=""  class="hover"/>
+        <img src="@/assets/1144.webp" alt=""  class="hover"/>
+        <img src="@/assets/1146.webp" alt=""  class="hover"/>
+        <img src="@/assets/1374.webp" alt=""  class="hover"/>
       </div>
     </div>
   </div>
@@ -37,12 +35,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: none;
+  font-family: "Bangers", system-ui;
 }
 
-body {
-  color: white;
-  font-family: Arial, sans-serif;
-}
+
 
 .logo {
   width: 100%;
@@ -50,9 +47,15 @@ body {
   height: auto;
   display: block;
   margin: 0 auto;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  
+  
 }
 
 .container {
+  
   display: grid;
   justify-content: center;
   align-items: center;
@@ -63,9 +66,25 @@ body {
 .home-logo {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 6rem  0rem 3rem;
+  margin-top: 4rem;
+  z-index: 11;
+  position: relative;
 }
-
+.background {
+  position: absolute;
+  top:5%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("@/assets/bannar_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  opacity: 0.15; /* Adjust the opacity here */
+  z-index: 1; /* Ensure the background is behind other content */
+}
 .home-images {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -74,28 +93,42 @@ body {
   /* padding-top: 3rem; */
   padding-left: 10rem;
   margin: auto;
+  z-index: 11;
   align-items: start;
 }
 
 .description {
   line-height: 2em;
-  color: white;
+  letter-spacing:0.08em;
   font-family: var(--font-header);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-align: start;
-  padding: 0 1rem 0 1rem;
+  padding: 3rem 1rem 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  line-height: 1.4;
 }
 
 .images {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  gap: 1.6rem;
   max-width: 32rem;
   margin-bottom: 4rem;
   justify-content: center;
+}
+.hover{
+  width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Transform the image on hover */
+.hover:hover {
+  transform: scale(1.2); /* Scale up the image */
+  border-radius: 5px solid white;
+
 }
 
 .images img {
@@ -131,9 +164,10 @@ body {
     justify-self: center;
   }
   .description {
-    padding-top: 0px;
+    padding: 0rem 4rem;
     margin-bottom: 4rem;
     text-align: center;
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 900px) {
@@ -141,16 +175,26 @@ body {
     justify-self: center;
   }
   .description {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 600px) {
+  .home-logo{
+    padding: 4rem  0rem 2rem;
+     margin-top: 4rem;
+  }
   .description {
-    font-size: 1.4rem;
+    padding: 0rem 1rem;
+    font-size: 1rem;
   }
   .images {
     justify-content: center;
+    gap: 0.4rem;
+    max-width: 20rem;
+  }
+  .background{
+    opacity: 0.1;
   }
 }
 </style>

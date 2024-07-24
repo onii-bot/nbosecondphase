@@ -352,37 +352,40 @@ export default {
         <RouterLink to="/" class="Routerlink" @click="closeNavbar"
           >HOME</RouterLink
         >
+        <RouterLink to="/wallet-checker" class="Routerlink" @click="closeNavbar"
+        >WALLET CHECKER</RouterLink
+      >
         <RouterLink to="/teams" class="Routerlink" @click="closeNavbar"
           >TEAMS</RouterLink
         >
+       
         <RouterLink to="/faqs" class="Routerlink" @click="closeNavbar"
           >FAQ</RouterLink
         >
-        <RouterLink to="/wallet-checker" class="Routerlink" @click="closeNavbar"
-          >WALLET CHECKER</RouterLink
-        >
+        
         <!-- <RouterLink to="/collection" class="Routerlink" @click="closeNavbar"
           >COLLECTIONS</RouterLink
         > -->
       </ul>
       <div class="close-button" @click="toggleNavbar">
-        <img src="@/assets/close-icon2.webp" alt="Close Icon" />
+        <img src="@/assets/cross.svg" alt="Close Icon" />
       </div>
       <div class="hamburger-social-links">
         <ul>
           <li>
             <a href="https://www.discord.com">
-              <img src="@/assets/discord.webp" alt="Discord" />
+              <img src="@/assets/discordlog.svg" alt="Discord" class="discord"/>
             </a>
           </li>
           <li>
-            <a href="https://www.x.com">
-              <img src="@/assets/x-new.webp" alt="Twitter" />
+            <a href="https://x.com/NewBitcoinOrder">
+              <img src="@/assets/twitterlog.svg" alt="Twitter" class="twitter"/>
+              
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com">
-              <img src="@/assets/instagram-new.webp" alt="Instagram" />
+            <a href="https://magiceden.io/ordinals/marketplace/nbo">
+              <img src="@/assets/magiceden.png" alt="Instagram" class="magiceden" />
             </a>
           </li>
         </ul>
@@ -391,17 +394,17 @@ export default {
     <ul class="navbar-social-links">
       <li>
         <a href="https://www.discord.com">
-          <img src="@/assets/discord.webp" alt="Discord" />
+          <img src="@/assets/discordlog.svg" alt="Discord" class="discord" />
         </a>
       </li>
       <li>
-        <a href="https://www.x.com">
-          <img src="@/assets/x.webp" alt="Twitter" />
+        <a href="https://x.com/NewBitcoinOrder">
+          <img src="@/assets/twitterlog.svg" alt="Twitter" class="twitter" />
         </a>
       </li>
       <li v-if="showInstagram">
-        <a href="https://www.instagram.com">
-          <img src="@/assets/instagram.webp" alt="Instagram" />
+        <a href="https://magiceden.io/ordinals/marketplace/nbo">
+          <img src="@/assets/magiceden.png" alt="Instagram"  class="magiceden"/>
         </a>
       </li>
     </ul>
@@ -441,19 +444,22 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  font-family: "Bangers", system-ui;
 }
 
 .navbar {
+  font-family: "Bangers", system-ui;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  background-color: #2d2d2d;
+  background-color: #141414;
   position: relative;
+  z-index: 111;
 }
 
 .brand-title {
-  margin-right: 1rem;
+  margin-right: 4.5rem;
 }
 
 .brand-title img {
@@ -472,7 +478,8 @@ export default {
 .navbar-links ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding:1rem;
+  gap: 1.2rem;
   display: flex;
   -webkit-tap-highlight-color: transparent;
 }
@@ -487,19 +494,20 @@ export default {
 
 .navbar-social-links {
   list-style: none;
-  margin-right: 1rem;
+  margin-right: 2rem;
   padding: 0;
   display: flex;
 }
 
 .navbar-social-links li {
   margin-left: 1rem;
+  stroke: #fff;
 }
 
 .navbar-links a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .toggle-button {
@@ -531,12 +539,25 @@ export default {
 }
 
 .navbar-social-links img {
-  width: 30px;
+
   height: auto;
+  
+}
+.discord{
+  width: 40px;
+  padding-right: 14px;
+}
+.twitter{
+  width: 32px;
+}
+.magiceden{
+  width: 60px;
 }
 
+
+
 .hamburger-social-links img {
-  width: 30px;
+  width: 32px;
   height: auto;
 }
 
@@ -555,6 +576,13 @@ export default {
 }
 
 @media (max-width: 1024px) {
+  .magiceden{
+    display: none;
+  }
+  .twitter{
+    padding:4px;
+    margin: none;
+  }
   .toggle-button {
     display: flex;
   }
@@ -568,7 +596,7 @@ export default {
   }
 
   .close-button img {
-    width: 2.5rem;
+    width: 2rem;
   }
 
   .brand-title {
@@ -589,7 +617,7 @@ export default {
     box-sizing: border-box;
     width: min(100vw, 18rem);
     height: 100%;
-    background: hsla(0, 0%, 6%, 0.7);
+    background: hsla(0, 0%, 6%, 0.5);
     flex-direction: column;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
@@ -635,8 +663,22 @@ export default {
   }
   .hamburger-social-links ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
+  .hamburger-social-links .twitter {
+    width: 40px;
+    padding-left: 8px;
+  }
+  .hamburger-social-links .discord {
+    width: 40px;
+    padding: 8px;
+  }
+  .hamburger-social-links .magiceden {
+    display: flex;
+    width: 60px;
+    
+  }
+
   .hamburger-social-links li {
     margin-left: 0.5rem;
     margin-right: 0.7rem;
