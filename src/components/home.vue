@@ -182,7 +182,7 @@
 @media (max-width: 600px) {
   .home-logo{
     padding: 4rem  0rem 2rem;
-     margin-top: 4rem;
+     margin: 4rem 0 2rem 0;
   }
   .description {
     padding: 0rem 1rem;
@@ -195,6 +195,11 @@
   }
   .background{
     opacity: 0.1;
+  }
+}
+  @media (max-width: 375px) {
+  .home-logo {
+    margin: 4rem 0 1rem 0;
   }
 }
 </style>
