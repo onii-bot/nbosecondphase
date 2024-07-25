@@ -20,17 +20,17 @@
         <img src="@/assets/logo.webp" alt="Brand Logo" />
       </div>
       <ul class="left-links">
-        <RouterLink to="/" class="Routerlink" @click="closeNavbar"
+        <RouterLink to="/" class="Routerlink" @click="closeNavbar" active-class="active-link"
           >HOME</RouterLink
         >
-        <RouterLink to="/wallet-checker" class="Routerlink" @click="closeNavbar"
+        <RouterLink to="/wallet-checker" class="Routerlink" @click="closeNavbar" active-class="active-link"
           >WALLET CHECKER</RouterLink
         >
-        <RouterLink to="/teams" class="Routerlink" @click="closeNavbar"
+        <RouterLink to="/teams" class="Routerlink" @click="closeNavbar" active-class="active-link"
           >TEAMS</RouterLink
         >
 
-        <RouterLink to="/faqs" class="Routerlink" @click="closeNavbar"
+        <RouterLink to="/faqs" class="Routerlink" @click="closeNavbar" active-class="active-link"
           >FAQ</RouterLink
         >
 
@@ -471,7 +471,41 @@ export default {
 .Routerlink {
   margin: 0 0.5rem;
 }
+.Routerlink {
+  margin: 0 0.5rem;
+  position: relative;
+  padding-bottom: 0.3rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
 
+.Routerlink::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  color: red;
+  background-color: #e4303c;
+  transition: width 0.3s ease;
+}
+.Routerlink.active-link {
+  color: #e4303c;
+}
+
+.Routerlink:hover::after {
+  width: 100%;
+  color: red;
+}
+
+.active-link::after {
+  background-color: #e4303c;
+  color: #e4303c;
+}
+  
 .navbar-social-links {
   list-style: none;
   margin-right: 2rem;
