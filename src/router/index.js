@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-const routes = routes: [
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
     {
       path: "/",
       name: "home",
       component: () => import("../components/home.vue"),
     },
+    {},
     {
       path: "/faqs",
       name: "FAQ",
@@ -20,12 +23,13 @@ const routes = routes: [
       path: "/wallet-checker",
       name: "wallet-checker",
       component: () => import("../components/wallet-checker.vue"),
-    }
-  ]
-
-const router = createRouter({
-    history: createWebHistory(),
-    routes
-})
+    },
+    // {
+    //   path: "/collection",
+    //   name: "collection",
+    //   component: () => import("../components/collection.vue"),
+    // },
+  ],
+});
 
 export default router;
