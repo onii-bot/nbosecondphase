@@ -6,23 +6,23 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => import("../components/home.vue"),
+      component: () => import("./components/home.vue"),
     },
     {},
     {
       path: "/faqs",
       name: "FAQ",
-      component: () => import("../components/FAQ.vue"),
+      component: () => import("./components/FAQ.vue"),
     },
     {
       path: "/teams",
       name: "team",
-      component: () => import("../components/teams.vue"),
+      component: () => import("./components/teams.vue"),
     },
     {
       path: "/wallet-checker",
       name: "wallet-checker",
-      component: () => import("../components/wallet-checker.vue"),
+      component: () => import("./components/wallet-checker.vue"),
     },
     // {
     //   path: "/collection",
