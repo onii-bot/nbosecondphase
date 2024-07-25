@@ -1,9 +1,6 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router'
 
-const router = createRouter({
-  mode: 'history',
-  // history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+const routes = routes: [
     {
       path: "/",
       name: "home",
@@ -23,13 +20,12 @@ const router = createRouter({
       path: "/wallet-checker",
       name: "wallet-checker",
       component: () => import("../components/wallet-checker.vue"),
-    },
-    // {
-    //   path: "/collection",
-    //   name: "collection",
-    //   component: () => import("../components/collection.vue"),
-    // },
-  ],
-});
+    }
+  ]
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
 
 export default router;
