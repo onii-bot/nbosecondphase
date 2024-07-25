@@ -688,6 +688,9 @@ export default {
   .navbar-social-links img {
     width: 40px;
   }
+  .navbar-links ul .Routerlink:hover::after {
+    width: 0%;
+  }
 }
 
 @media (min-width: 1025px) {
